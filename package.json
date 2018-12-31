@@ -4,6 +4,11 @@
     "main": "index.js",
     "author": "Kunal Malik",
     "license": "MIT",
+    "proxy": {
+        "/api/*": {
+          "target": "http://localhost:5000"
+        }
+      },
     "scripts": {
         "client-start": "react-scripts start",
         "client-build": "react-scripts build",
