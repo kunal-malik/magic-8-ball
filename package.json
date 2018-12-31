@@ -1,0 +1,41 @@
+{
+    "name": "magic-8-ball",
+    "version": "0.0.1",
+    "main": "index.js",
+    "author": "Kunal Malik",
+    "license": "MIT",
+    "scripts": {
+        "client-start": "react-scripts start",
+        "client-build": "react-scripts build",
+        "client-test": "react-scripts test",
+        "client-eject": "react-scripts eject",
+        "dev": "concurrently - kill-others \"npm run server-dev\" \"npm run client-start\"",
+        "server-dev": "nodemon server.js",
+        "prod": "node server.js",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix server && npm install --prefix client && npm run build --prefix client"
+    },
+    "dependencies": {
+        "react": "^16.7.0",
+        "react-dom": "^16.7.0",
+        "react-scripts": "2.1.2",
+        "concurrently": "^3.5.1",
+        "body-parser": "^1.18.2",
+        "express": "^4.16.2"
+    },
+    "devDependencies": {
+        "nodemon": "^1.17.1"
+    },
+    "engines": {
+        "node": ">8.9.4",
+        "npm": "5.6.0"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ]
+}
