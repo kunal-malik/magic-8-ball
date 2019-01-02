@@ -10,16 +10,14 @@
         "client-build": "react-scripts build",
         "client-test": "react-scripts test",
         "client-eject": "react-scripts eject",
-        "dev": "concurrently --kill-others \"npm run server-dev\" \"npm run client-start\"",
         "server-dev": "nodemon server.js",
-        "prod": "yarn run client-build && node server.js",
-        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix server && npm install --prefix client && npm run build --prefix client"
+        "dev": "yarn run server-dev && yarn run client-start",
+        "prod": "yarn run client-build && node server.js"
     },
     "dependencies": {
         "axios": "^0.18.0",
-        "body-parser": "^1.18.2",
-        "concurrently": "^3.5.1",
         "express": "^4.16.2",
+        "node-sass": "^4.11.0",
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
         "react-scripts": "2.1.2"

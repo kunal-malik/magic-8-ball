@@ -31,7 +31,10 @@ const port = process.env.PORT || 5000;
 app.use('/', express.static(`${__dirname}/build`));
 
 app.get('/api/magic8ball/v1/', (req, res) => {
-  const randomNo = Math.floor(Math.random() * DATA.length) + 0;
+  let randomNo = 0;
+  if(DATA.length){
+    randomNo = Math.floor(Math.random() * DATA.length) + 0;
+  }
   res.send(DATA[randomNo]);
 });
 

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import './App.css';
+import '../scss/App.scss';
+import Constants from '../constants';
 
 class App extends Component {
 
   constructor (props) {
     super(props);
-    this.getAdvice = this.getAdvice.bind(this)
+    this.getAdvice = this.getAdvice.bind(this);
     
     this.state = {
       advice: ''
@@ -23,10 +24,14 @@ class App extends Component {
     .catch(error =>  {
       this.setState({
         showError: true,
-        errorMsg: 'Error occurred while getting advice'
+        errorMsg: Constants.ERROR_API_ADVICE
       })
       console.error(error);
     })
+  }
+
+  componentDidMount(){
+    this.getAdvice();
   }
 
   render() {
