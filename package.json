@@ -4,28 +4,25 @@
     "main": "index.js",
     "author": "Kunal Malik",
     "license": "MIT",
-    "proxy": {
-        "/api/*": {
-          "target": "http://localhost:5000"
-        }
-      },
+    "proxy": "http://localhost:5000",
     "scripts": {
         "client-start": "react-scripts start",
         "client-build": "react-scripts build",
         "client-test": "react-scripts test",
         "client-eject": "react-scripts eject",
-        "dev": "concurrently - kill-others \"npm run server-dev\" \"npm run client-start\"",
+        "dev": "concurrently --kill-others \"npm run server-dev\" \"npm run client-start\"",
         "server-dev": "nodemon server.js",
         "prod": "yarn run client-build && node server.js",
         "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix server && npm install --prefix client && npm run build --prefix client"
     },
     "dependencies": {
+        "axios": "^0.18.0",
+        "body-parser": "^1.18.2",
+        "concurrently": "^3.5.1",
+        "express": "^4.16.2",
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
-        "react-scripts": "2.1.2",
-        "concurrently": "^3.5.1",
-        "body-parser": "^1.18.2",
-        "express": "^4.16.2"
+        "react-scripts": "2.1.2"
     },
     "devDependencies": {
         "nodemon": "^1.17.1"

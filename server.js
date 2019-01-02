@@ -32,7 +32,7 @@ app.use('/', express.static(`${__dirname}/build`));
 
 app.get('/api/magic8ball/v1/', (req, res) => {
   const randomNo = Math.floor(Math.random() * DATA.length) + 0;
-  res.send(randomNo);
+  res.send(DATA[randomNo]);
 });
 
 // express will serve up index.html if it doesn't recognize the route
