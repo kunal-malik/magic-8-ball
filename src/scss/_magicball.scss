@@ -1,0 +1,41 @@
+.magic-ball-container {
+    .ball {
+        align-items: center;
+        background: $black;
+        border-radius: 50%;
+        box-shadow: 15px 20px 60px rgba(255, 255, 255, 0.1);
+        box-sizing: border-box;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        height: 300px;
+        position: relative;
+        width: 300px;
+        flex-direction: column;
+
+        .ball-answer-container {
+            align-items: center;
+            background: radial-gradient( ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            border: 5px solid #999;
+            border-radius: 50%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            height: 50%;
+            width: 50%;
+
+            &:hover {
+                opacity: 0.75;
+            }
+          }
+
+          .error{
+              border-color: $red;
+          }
+
+
+          
+      }
+
+
+}

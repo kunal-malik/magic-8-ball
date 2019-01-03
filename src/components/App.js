@@ -1,49 +1,19 @@
-import React, { Component } from 'react';
-import axios from 'axios'
-import '../scss/App.scss';
+import React from 'react';
+//Components
+import MagicBall from './MagicBall';
+
 import Constants from '../constants';
 
-class App extends Component {
-
-  constructor (props) {
-    super(props);
-    this.getAdvice = this.getAdvice.bind(this);
-    
-    this.state = {
-      advice: ''
-    }
-  }
-
-  getAdvice(){
-    axios.get('/api/magic8ball/v1/')
-    .then(response => {
-      this.setState({
-        advice: response.data
-      })
-    })
-    .catch(error =>  {
-      this.setState({
-        showError: true,
-        errorMsg: Constants.ERROR_API_ADVICE
-      })
-      console.error(error);
-    })
-  }
-
-  componentDidMount(){
-    this.getAdvice();
-  }
-
-  render() {
-    const {advice} = this.state;
-    return (
-      <div className="App">
-        <header className="App-header">
-        {advice}
-        </header>
-      </div>
-    );
-  }
-}
+//This function component renders all the UI elements
+const App = () => (
+  <div className="app">
+    <header className="app-header">
+      {Constants.HEADING}
+    </header>
+    <main className="app-main">
+      <MagicBall />
+    </main>
+  </div>
+)
 
 export default App;

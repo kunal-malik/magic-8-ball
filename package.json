@@ -16,14 +16,15 @@
     },
     "dependencies": {
         "axios": "^0.18.0",
-        "express": "^4.16.2",
+        "express": "^4.16.4",
         "node-sass": "^4.11.0",
         "react": "^16.7.0",
         "react-dom": "^16.7.0",
-        "react-scripts": "2.1.2"
+        "react-scripts": "2.1.2",
+        "react-spinners": "^0.4.8"
     },
     "devDependencies": {
-        "nodemon": "^1.17.1"
+        "nodemon": "^1.18.9"
     },
     "engines": {
         "node": ">8.9.4",
