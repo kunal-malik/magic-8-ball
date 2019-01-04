@@ -12,10 +12,10 @@ Below are the demo instructions that can be used in production. Currently, we te
 4. Open your browser and navigate to http://localhost:5000
 
 For executing tests:
-yarn run client-test
+1. Including coverage : yarn run client-test --coverage
+2. Excluding coverage : yarn run client-test (enter 'a' in case no tests run)
 
-For test coverage:
-yarn run client-test --coverage
+
 
 For development:
 2. yarn run client-build
