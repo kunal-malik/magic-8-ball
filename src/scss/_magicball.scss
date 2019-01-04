@@ -1,32 +1,48 @@
 .magic-ball-container {
-    .ball {
+    
+    %ball-shared {
         align-items: center;
-        background: $black;
-        border-radius: 50%;
-        box-shadow: 15px 20px 60px rgba(255, 255, 255, 0.1);
-        box-sizing: border-box;
-        cursor: pointer;
         display: flex;
         justify-content: center;
-        height: 300px;
+        box-sizing: border-box;
+        border-radius: 50%;
+    }
+
+    .ball {
+        @extend %ball-shared;
+        background: $black;
+        box-shadow: 15px 20px 60px rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        height: $three-hundred;
         position: relative;
-        width: 300px;
+        width: $three-hundred;
         flex-direction: column;
 
         .ball-answer-container {
-            align-items: center;
+            @extend %ball-shared;
             background: radial-gradient( ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
             border: 5px solid #999;
-            border-radius: 50%;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
             height: 50%;
             width: 50%;
 
             &:hover {
                 opacity: 0.75;
             }
+
+            .advice {
+                animation: 1s fadeIn;
+                animation-fill-mode: forwards;
+                visibility: hidden;
+            }
+
+            @keyframes fadeIn {
+                50% {
+                  visibility: hidden;
+                }
+                100% {
+                  visibility: visible;
+                }
+              }
           }
 
           .error{

@@ -11,8 +11,7 @@
         "client-test": "react-scripts test",
         "client-eject": "react-scripts eject",
         "server-dev": "nodemon server.js",
-        "dev": "yarn run server-dev && yarn run client-start",
-        "prod": "yarn run client-build && node server.js"
+        "server-prod": "node server.js"
     },
     "dependencies": {
         "axios": "^0.18.0",
