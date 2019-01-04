@@ -54,19 +54,19 @@ class MagicBall extends Component {
       this.setState({
         loading: false
       })
-    }, 2000);
+    }, 1000);
 
   }
 
   render() {
     const { advice, loading, showError } = this.state;
     return (
-      <div className="magic-ball-container">
+      <div className="magic-ball-container" id="magic-ball-container">
         <div className="ball">
-          <div className={`ball-answer-container ${showError ? `error` : null}`} onClick={() => this.setState({ loading: true }, () => this.getAdvice())}>
+          <div id="ball-answer-container" className={`ball-answer-container ${showError ? `error` : null}`} onClick={() => this.setState({ loading: true }, () => this.getAdvice())}>
             {loading ? <Loader />
               :
-              <div className="advice">{advice}</div>
+              <div className="advice" id="advice">{advice}</div>
             }
           </div>
         </div>
