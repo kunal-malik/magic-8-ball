@@ -24,7 +24,7 @@ describe('MagicBall component', () => {
     expect(advice.exists()).toBe(false)
     setTimeout(() => {
       expect(advice.exists()).toBe(true)
-    }, 2000);
+    }, 2200);
   });
 
   it('should call api when user seeks an advice', () => {

@@ -24,11 +24,12 @@ class MagicBall extends Component {
   }
 
   /**
-   * Gets advice from the api and handles the response
+   * Gets advice from the api and handles the response. Calls the api after a delay to show the animation effect/loading icon to the user
    * @memberof MagicBall
    */
   getAdvice() {
-    axios.get('/api/magic8ball/v1/advice/')
+    setTimeout(() => {
+      axios.get('/api/magic8ball/v1/advice/')
       .then(response => {
         this.setState({
           advice: response.data,
@@ -43,10 +44,11 @@ class MagicBall extends Component {
         })
         console.error(error);
       })
+    },1500)
   }
 
   /**
-   * Show spinner initially while loading the ball to include some animation
+   * Show loading icon initially while initializing the ball
    * @memberof MagicBall
    */
   componentDidMount() {
@@ -54,7 +56,7 @@ class MagicBall extends Component {
       this.setState({
         loading: false
       })
-    }, 1000);
+    }, 2000);
 
   }
 

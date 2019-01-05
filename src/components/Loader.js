@@ -4,7 +4,7 @@ import { BounceLoader } from 'react-spinners';
 
 import Constants from '../constants';
 
-//Spinner or loading icon for the application
+//Loading icon for the application
 const Loader = () => (
   <div className="loader">
     <BounceLoader

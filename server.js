@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 
 app.use('/', express.static(`${__dirname}/build`));
 
-//Service endpoint for the client to retrive advices
+//Service endpoint for generating a random advice
 app.get('/api/magic8ball/v1/advice/', (req, res) => {
   let randomNo = 0;
   try {
