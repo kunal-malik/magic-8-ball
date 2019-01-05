@@ -12,7 +12,6 @@
         @extend %ball-shared;
         background: $black;
         box-shadow: 15px 20px 60px rgba(255, 255, 255, 0.1);
-        cursor: pointer;
         height: $three-hundred;
         position: relative;
         width: $three-hundred;
@@ -24,6 +23,7 @@
             border: 5px solid #ccc;
             height: 70%;
             width: 70%;
+            cursor: pointer;
 
             &:hover {
                 opacity: 0.75;
